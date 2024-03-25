@@ -56,11 +56,11 @@ app.post('/admin/savelist', (req, res) => {
     // Route adds a new book
     const data = req.body
     if (!data.title)
-        return res.status(400).send("No title found.")
+        return res.status(400).send("No task found.")
     if (!data.author)
-        return res.status(400).send("No author found.")
+        return res.status(400).send("No public found.")
     if (!data.price)
-        return res.status(400).send("No price found.")
+        return res.status(400).send("No private found.")
 
     myList.insertOne(data)
     .then(response=>{
